@@ -1,5 +1,8 @@
-Acceptance Test - MiGranja
+Acceptance Test -MiGranja
 
+## US01 – Inicio de sesión
+
+```gherkin
 Feature: US01 - Inicio de sesión
 
   Como usuario registrado,
@@ -31,9 +34,11 @@ Feature: US01 - Inicio de sesión
     When ingresa sus credenciales correctas
     And selecciona la opción "Recordarme"
     Then el sistema mantiene la sesión abierta en ese dispositivo
+```
 
-US02 – Registro de usuario
+## US02 – Registro de usuario
 
+```gherkin
 Feature: US02 - Registro de usuario
 
   Como nuevo usuario,
@@ -59,11 +64,11 @@ Feature: US02 - Registro de usuario
     When el usuario intenta registrarse
     Then el sistema informa que el correo ya está registrado
     And no crea una cuenta duplicada
+```
 
+## US03 – Selección de plan
 
-
-US03 – Selección de plan
-
+```gherkin
 Feature: US03 - Selección de plan
 
   Como nuevo usuario,
@@ -86,11 +91,11 @@ Feature: US03 - Selección de plan
     When decide seleccionar otro plan disponible
     Then el sistema actualiza la selección
     And muestra el nuevo plan elegido
+```
 
+## US04 – Confirmación de registro
 
-
-US04 – Confirmación de registro
-
+```gherkin
 Feature: US04 - Confirmación de registro
 
   Como nuevo usuario,
@@ -112,11 +117,11 @@ Feature: US04 - Confirmación de registro
     Given que el sistema confirmó el registro del usuario
     When el usuario selecciona continuar
     Then el sistema permite avanzar al siguiente paso
+```
 
+## US05 – Recuperación de contraseña
 
-
-US05 – Recuperación de contraseña
-
+```gherkin
 Feature: US05 - Recuperación de contraseña
 
   Como usuario registrado,
@@ -139,11 +144,11 @@ Feature: US05 - Recuperación de contraseña
     Given que el usuario está en el formulario de recuperación
     When ingresa un correo con formato incorrecto
     Then el sistema solicita ingresar un correo válido
+```
 
+## US06 – Validar código de recuperación
 
-
-US06 – Validar código de recuperación
-
+```gherkin
 Feature: US06 - Validar código de recuperación
 
   Como usuario,
@@ -166,11 +171,11 @@ Feature: US06 - Validar código de recuperación
     Given que el usuario está en la pantalla de validación
     When intenta continuar sin ingresar el código
     Then el sistema solicita completar el campo
+```
 
+## US07 – Crear nueva contraseña
 
-
-US07 – Crear nueva contraseña
-
+```gherkin
 Feature: US07 - Crear nueva contraseña
 
   Como usuario verificado,
@@ -194,11 +199,11 @@ Feature: US07 - Crear nueva contraseña
     Given que el usuario ingresa una nueva contraseña
     When la confirmación no coincide con la contraseña ingresada
     Then el sistema informa que ambas contraseñas deben coincidir
+```
 
+## US08 – Registrar datos de la granja
 
-
-US08 – Registrar datos de la granja
-
+```gherkin
 Feature: US08 - Registrar datos de la granja
 
   Como nuevo usuario,
@@ -223,11 +228,11 @@ Feature: US08 - Registrar datos de la granja
     When modifica la información ingresada
     And guarda los cambios
     Then el sistema registra la información actualizada
+```
 
+## US09 – Panel principal
 
-
-US09 – Panel principal
-
+```gherkin
 Feature: US09 - Panel principal
 
   Como productor ganadero,
@@ -249,11 +254,11 @@ Feature: US09 - Panel principal
     Given que el productor se encuentra en el panel principal
     When solicita actualizar la información
     Then el sistema muestra los datos disponibles más recientes
+```
 
+## US10 – Indicadores de la granja
 
-
-US10 – Indicadores de la granja
-
+```gherkin
 Feature: US10 - Indicadores de la granja
 
   Como productor ganadero,
@@ -276,9 +281,11 @@ Feature: US10 - Indicadores de la granja
     Given que existen nuevos registros en la granja
     When el productor actualiza los indicadores
     Then el sistema presenta las cantidades correspondientes a los registros disponibles
+```
 
-US11 – Recordatorios de actividades
+## US11 – Recordatorios de actividades
 
+```gherkin
 Feature: US11 - Recordatorios de actividades
 
   Como encargado de granja,
@@ -300,11 +307,11 @@ Feature: US11 - Recordatorios de actividades
     Given que el encargado accede a los recordatorios
     When no existen actividades pendientes
     Then el sistema informa que no hay recordatorios disponibles
+```
 
+## US12 – Alertas prioritarias
 
-
-US12 – Alertas prioritarias
-
+```gherkin
 Feature: US12 - Alertas prioritarias
 
   Como productor ganadero,
@@ -326,11 +333,11 @@ Feature: US12 - Alertas prioritarias
     Given que el productor accede a la sección de alertas
     When no existen alertas registradas
     Then el sistema informa que no hay alertas disponibles
+```
 
+## US13 – Listado de animales
 
-
-US13 – Listado de animales
-
+```gherkin
 Feature: US13 - Listado de animales
 
   Como productor ganadero,
@@ -352,11 +359,11 @@ Feature: US13 - Listado de animales
     Given que el productor visualiza el listado de animales
     When selecciona un animal
     Then el sistema permite consultar su información
+```
 
+## US14 – Detalle del animal
 
-
-US14 – Detalle del animal
-
+```gherkin
 Feature: US14 - Detalle del animal
 
   Como productor ganadero,
@@ -378,11 +385,11 @@ Feature: US14 - Detalle del animal
     Given que el productor está visualizando la ficha de un animal
     When selecciona la opción para regresar
     Then el sistema muestra nuevamente el listado de animales
+```
 
+## US15 – Registrar animal
 
-
-US15 – Registrar animal
-
+```gherkin
 Feature: US15 - Registrar animal
 
   Como encargado de granja,
@@ -407,11 +414,11 @@ Feature: US15 - Registrar animal
     When el encargado intenta registrar otro animal con el mismo código
     Then el sistema informa que el código ya está registrado
     And evita crear un registro duplicado
+```
 
+## US16 – Editar datos del animal
 
-
-US16 – Editar datos del animal
-
+```gherkin
 Feature: US16 - Editar datos del animal
 
   Como encargado de granja,
@@ -434,11 +441,11 @@ Feature: US16 - Editar datos del animal
     Given que el encargado modificó los datos de un animal
     When cancela la edición
     Then el sistema conserva la información anterior
+```
 
+## US17 – Dar de baja un animal
 
-
-US17 – Dar de baja un animal
-
+```gherkin
 Feature: US17 - Dar de baja un animal
 
   Como productor ganadero,
@@ -461,11 +468,11 @@ Feature: US17 - Dar de baja un animal
     Given que el productor intenta dar de baja un animal
     When el registro no existe
     Then el sistema informa que no se encontró el animal
+```
 
+## US18 – Foto del animal
 
-
-US18 – Foto del animal
-
+```gherkin
 Feature: US18 - Foto del animal
 
   Como encargado de granja,
@@ -488,11 +495,11 @@ Feature: US18 - Foto del animal
     When el encargado carga una nueva fotografía
     And guarda los cambios
     Then el sistema actualiza la imagen del animal
+```
 
+## US19 – Buscar animal por código
 
-
-US19 – Buscar animal por código
-
+```gherkin
 Feature: US19 - Buscar animal por código
 
   Como encargado de granja,
@@ -514,11 +521,11 @@ Feature: US19 - Buscar animal por código
     Given que el encargado se encuentra en el buscador
     When intenta buscar sin ingresar un código
     Then el sistema solicita ingresar un código válido
+```
 
+## US20 – Filtrar animales
 
-
-US20 – Filtrar animales
-
+```gherkin
 Feature: US20 - Filtrar animales
 
   Como productor ganadero,
@@ -541,9 +548,11 @@ Feature: US20 - Filtrar animales
     Then el sistema informa que no existen resultados
 
   Scenario: Alternativo - limpiar filtros
+```
 
-US21 – Crear lote
+## US21 – Crear lote
 
+```gherkin
 Feature: US21 - Crear lote
 
   Como productor ganadero,
@@ -566,11 +575,11 @@ Feature: US21 - Crear lote
     Given que el productor está completando el formulario de un lote
     When cancela la operación
     Then el sistema no registra el nuevo lote
+```
 
+## US22 – Listado de lotes
 
-
-US22 – Listado de lotes
-
+```gherkin
 Feature: US22 - Listado de lotes
 
   Como productor ganadero,
@@ -592,11 +601,11 @@ Feature: US22 - Listado de lotes
     Given que el productor visualiza el listado de lotes
     When selecciona un lote
     Then el sistema permite consultar su información
+```
 
+## US23 – Asignar animales a un lote
 
-
-US23 – Asignar animales a un lote
-
+```gherkin
 Feature: US23 - Asignar animales a un lote
 
   Como encargado de granja,
@@ -625,11 +634,11 @@ Feature: US23 - Asignar animales a un lote
     When el encargado selecciona otro lote de destino
     And confirma el cambio
     Then el sistema actualiza la asignación de los animales
+```
 
+## US24 – Editar o cerrar lote
 
-
-US24 – Editar o cerrar lote
-
+```gherkin
 Feature: US24 - Editar o cerrar lote
 
   Como productor ganadero,
@@ -658,11 +667,11 @@ Feature: US24 - Editar o cerrar lote
     Given que el productor inició el cierre de un lote
     When cancela la operación
     Then el sistema mantiene el lote sin cambios
+```
 
+## US25 – Registrar alimentación de un animal
 
-
-US25 – Registrar alimentación de un animal
-
+```gherkin
 Feature: US25 - Registrar alimentación de un animal
 
   Como encargado de granja,
@@ -685,11 +694,11 @@ Feature: US25 - Registrar alimentación de un animal
     When omite información obligatoria
     And intenta guardar
     Then el sistema solicita completar los datos faltantes
+```
 
+## US26 – Registrar alimentación por lote
 
-
-US26 – Registrar alimentación por lote
-
+```gherkin
 Feature: US26 - Registrar alimentación por lote
 
   Como encargado de granja,
@@ -717,11 +726,11 @@ Feature: US26 - Registrar alimentación por lote
     Given que el encargado está completando el registro de alimentación
     When cancela la operación
     Then el sistema no guarda el registro
+```
 
+## US27 – Historial de alimentación
 
-
-US27 – Historial de alimentación
-
+```gherkin
 Feature: US27 - Historial de alimentación
 
   Como productor ganadero,
@@ -743,11 +752,11 @@ Feature: US27 - Historial de alimentación
     Given que el productor visualiza el historial de alimentación
     When revisa los registros anteriores
     Then el sistema muestra la información histórica disponible
+```
 
+## US28 – Programar alimentación
 
-
-US28 – Programar alimentación
-
+```gherkin
 Feature: US28 - Programar alimentación
 
   Como encargado de granja,
@@ -770,11 +779,11 @@ Feature: US28 - Programar alimentación
     Given que el encargado tiene una alimentación programada
     When accede a la programación del lote
     Then el sistema muestra los horarios registrados
+```
 
+## US29 – Registrar vacunación
 
-
-US29 – Registrar vacunación
-
+```gherkin
 Feature: US29 - Registrar vacunación
 
   Como encargado de granja,
@@ -797,11 +806,11 @@ Feature: US29 - Registrar vacunación
     Given que el encargado está completando el registro sanitario
     When ingresa una dosis no válida
     Then el sistema solicita corregir la información
+```
 
+## US30 – Vacunación por lote
 
-
-US30 – Vacunación por lote
-
+```gherkin
 Feature: US30 - Vacunación por lote
 
   Como encargado de granja,
@@ -823,9 +832,11 @@ Feature: US30 - Vacunación por lote
   Scenario: Unhappy path - datos incompletos
     Given que el encargado está registrando la vacunación del lote
     When omite información obligatoria
+```
 
-US31 – Vacunas pendientes
+## US31 – Vacunas pendientes
 
+```gherkin
 Feature: US31 - Vacunas pendientes
 
   Como productor ganadero,
@@ -847,11 +858,11 @@ Feature: US31 - Vacunas pendientes
     Given que el productor accede a la sección sanitaria
     When no existen vacunas pendientes ni vencidas
     Then el sistema informa que no hay vacunas por atender
+```
 
+## US32 – Registrar tratamiento sanitario
 
-
-US32 – Registrar tratamiento sanitario
-
+```gherkin
 Feature: US32 - Registrar tratamiento sanitario
 
   Como encargado de granja,
@@ -874,11 +885,11 @@ Feature: US32 - Registrar tratamiento sanitario
     Given que el animal tiene tratamientos registrados
     When el encargado consulta su información sanitaria
     Then el sistema muestra los tratamientos disponibles
+```
 
+## US33 – Detalle de ubicación
 
-
-US33 – Detalle de ubicación
-
+```gherkin
 Feature: US33 - Detalle de ubicación
 
   Como productor ganadero,
@@ -900,11 +911,11 @@ Feature: US33 - Detalle de ubicación
     Given que el productor selecciona un corral o potrero registrado
     When no existen animales asignados
     Then el sistema informa que la ubicación no contiene animales
+```
 
+## US34 – Historial de movimientos
 
-
-US34 – Historial de movimientos
-
+```gherkin
 Feature: US34 - Historial de movimientos
 
   Como productor ganadero,
@@ -926,11 +937,11 @@ Feature: US34 - Historial de movimientos
     Given que el productor visualiza el historial de movimientos
     When selecciona un movimiento específico
     Then el sistema muestra la información correspondiente
+```
 
+## US35 – Registrar movimiento
 
-
-US35 – Registrar movimiento
-
+```gherkin
 Feature: US35 - Registrar movimiento
 
   Como encargado de granja,
@@ -959,11 +970,11 @@ Feature: US35 - Registrar movimiento
     Given que el encargado está completando los datos del traslado
     When cancela la operación
     Then el sistema no registra el movimiento
+```
 
+## US36 – Detalle de movimiento
 
-
-US36 – Detalle de movimiento
-
+```gherkin
 Feature: US36 - Detalle de movimiento
 
   Como productor ganadero,
@@ -985,11 +996,11 @@ Feature: US36 - Detalle de movimiento
     Given que el productor está visualizando el detalle de un movimiento
     When selecciona regresar
     Then el sistema muestra nuevamente el historial de movimientos
+```
 
+## US37 – Buscar historial
 
-
-US37 – Buscar historial
-
+```gherkin
 Feature: US37 - Buscar historial
 
   Como productor ganadero,
@@ -1016,11 +1027,11 @@ Feature: US37 - Buscar historial
     Given que el productor selecciona un lote
     When el lote no tiene información histórica
     Then el sistema informa que no existen registros disponibles
+```
 
+## US38 – Historial integral del animal
 
-
-US38 – Historial integral del animal
-
+```gherkin
 Feature: US38 - Historial integral del animal
 
   Como productor ganadero,
@@ -1042,11 +1053,11 @@ Feature: US38 - Historial integral del animal
     Given que el productor visualiza la línea de tiempo
     When selecciona una actividad registrada
     Then el sistema muestra los detalles correspondientes
+```
 
+## US39 – Filtrar historial
 
-
-US39 – Filtrar historial
-
+```gherkin
 Feature: US39 - Filtrar historial
 
   Como productor ganadero,
@@ -1072,11 +1083,11 @@ Feature: US39 - Filtrar historial
     Given que el productor aplica filtros al historial
     When no existen registros que cumplan los criterios
     Then el sistema informa que no se encontraron resultados
+```
 
+## US40 – Historial del lote
 
-
-US40 – Historial del lote
-
+```gherkin
 Feature: US40 - Historial del lote
 
   Como productor ganadero,
@@ -1098,9 +1109,11 @@ Feature: US40 - Historial del lote
     Given que el productor visualiza el historial del lote
     When selecciona una actividad específica
     Then el sistema muestra sus detalles correspondientes
+```
 
-US41 – Resumen operativo
+## US41 – Resumen operativo
 
+```gherkin
 Feature: US41 - Resumen operativo
 
   Como productor ganadero,
@@ -1122,11 +1135,11 @@ Feature: US41 - Resumen operativo
     Given que existen nuevos registros en la granja
     When el productor actualiza el resumen operativo
     Then el sistema muestra la información semanal actualizada
+```
 
+## US42 – Gestionar ubicaciones
 
-
-US42 – Gestionar ubicaciones
-
+```gherkin
 Feature: US42 - Gestionar ubicaciones
 
   Como productor ganadero,
@@ -1149,11 +1162,11 @@ Feature: US42 - Gestionar ubicaciones
     Given que existen ubicaciones registradas
     When el productor accede al listado
     Then el sistema muestra los corrales y potreros disponibles
+```
 
+## US43 – Reporte de vacunación
 
-
-US43 – Reporte de vacunación
-
+```gherkin
 Feature: US43 - Reporte de vacunación
 
   Como productor ganadero,
@@ -1175,11 +1188,11 @@ Feature: US43 - Reporte de vacunación
     Given que el productor selecciona un periodo válido
     When no existen vacunaciones registradas en ese periodo
     Then el sistema informa que no hay datos para generar el reporte
+```
 
+## US44 – Reporte de alimentación
 
-
-US44 – Reporte de alimentación
-
+```gherkin
 Feature: US44 - Reporte de alimentación
 
   Como productor ganadero,
@@ -1200,11 +1213,11 @@ Feature: US44 - Reporte de alimentación
     Given que existen registros de alimentación en diferentes fechas
     When el productor selecciona un periodo
     Then el sistema muestra la información correspondiente al periodo seleccionado
+```
 
+## US45 – Exportar historial del animal
 
-
-US45 – Exportar historial del animal
-
+```gherkin
 Feature: US45 - Exportar historial del animal
 
   Como productor ganadero,
@@ -1226,11 +1239,11 @@ Feature: US45 - Exportar historial del animal
     Given que el sistema generó correctamente el archivo PDF
     When el productor selecciona descargar
     Then el sistema permite guardar el documento
+```
 
+## US46 – Exportar reportes a Excel
 
-
-US46 – Exportar reportes a Excel
-
+```gherkin
 Feature: US46 - Exportar reportes a Excel
 
   Como productor ganadero,
@@ -1252,11 +1265,11 @@ Feature: US46 - Exportar reportes a Excel
     Given que el sistema generó correctamente el archivo Excel
     When el productor selecciona descargar
     Then el sistema permite guardar el archivo
+```
 
+## US47 – Invitar encargado de granja
 
-
-US47 – Invitar encargado de granja
-
+```gherkin
 Feature: US47 - Invitar encargado de granja
 
   Como productor ganadero,
@@ -1285,11 +1298,11 @@ Feature: US47 - Invitar encargado de granja
     Given que el productor ha enviado invitaciones
     When accede a la gestión de usuarios
     Then el sistema muestra las invitaciones registradas
+```
 
+## US48 – Roles y permisos
 
-
-US48 – Roles y permisos
-
+```gherkin
 Feature: US48 - Roles y permisos
 
   Como productor ganadero,
@@ -1318,11 +1331,11 @@ Feature: US48 - Roles y permisos
     When el productor modifica sus permisos
     And guarda los cambios
     Then el sistema actualiza las autorizaciones correspondientes
+```
 
+## US49 – Mi cuenta y plan
 
-
-US49 – Mi cuenta y plan
-
+```gherkin
 Feature: US49 - Mi cuenta y plan
 
   Como usuario,
@@ -1350,11 +1363,11 @@ Feature: US49 - Mi cuenta y plan
     When ingresa información con formato incorrecto
     And intenta guardar
     Then el sistema solicita corregir los datos
+```
 
+## US50 – Cerrar sesión
 
-
-US50 – Cerrar sesión
-
+```gherkin
 Feature: US50 - Cerrar sesión
 
   Como usuario,
@@ -1377,3 +1390,4 @@ Feature: US50 - Cerrar sesión
     Given que el usuario seleccionó cerrar sesión
     When cancela la operación
     Then el sistema mantiene la sesión activa
+```
